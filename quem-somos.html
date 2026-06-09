@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js');</script>
+<title>Quem Somos | Hidro-Sul · O braço técnico em individualização de água e gás</title>
+<meta name="description" content="Conheça a Hidro-Sul: há mais de 20 anos o braço técnico que instala individualização de água e gás na Grande São Paulo, com equipe própria CLT, seguro de obra e zero retrabalho protegendo a reputação da sua marca.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#012a60">
+<link rel="canonical" href="https://hidro-sul.com/quem-somos.html">
+<meta property="og:title" content="Quem Somos | Hidro-Sul">
+<meta property="og:description" content="O braço técnico da sua engenharia de vendas. 20+ anos e 300 mil+ medidores instalados na Grande São Paulo, com equipe própria e seguro de obra.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="preload" href="fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ibmplexsans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<!-- =====================================================================
+     ESTILOS ESPECÍFICOS DA PÁGINA "QUEM SOMOS"
+     Usa os tokens (variáveis) já definidos em style.css. Reaproveita os
+     componentes compartilhados (page-hero, stats-card, why-section,
+     parceiros, cta-banner, footer). Aqui ficam apenas os blocos novos.
+     Se preferir seguir a convenção do site, mova este bloco para o
+     style.css, sob uma seção "PÁGINA QUEM SOMOS".
+===================================================================== -->
+<style>
+  /* ---- Intro / manifesto ---- */
+  .about-intro{background:var(--white);}
+  .about-intro .container{padding-top:72px;padding-bottom:0;}
+  .about-grid{display:grid;grid-template-columns:1.25fr .95fr;gap:54px;align-items:center;}
+  .about-copy .section-eyebrow{margin-bottom:16px;}
+  .about-copy h2{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(28px,3.2vw,40px);line-height:1.12;letter-spacing:-.025em;
+    color:var(--navy-deep);margin-bottom:20px;
+  }
+  .about-copy p{font-size:16px;line-height:1.72;color:var(--gray-700);margin-bottom:16px;max-width:560px;}
+  .about-copy p strong{color:var(--navy);font-weight:600;}
+  .about-copy .about-statement{
+    margin-top:24px;font-family:var(--font-display);font-weight:700;font-size:17px;
+    color:var(--navy);letter-spacing:-.01em;display:flex;align-items:center;gap:12px;
+  }
+  .about-copy .about-statement::before{content:'';width:34px;height:2px;background:var(--orange);flex-shrink:0;}
+
+  /* Cartão de pilares (gradiente navy, contraste com a seção branca) */
+  .pillars-card{
+    background:linear-gradient(150deg,#0163c2 0%, #013580 60%, #012a60 100%);
+    border-radius:var(--radius-lg);padding:14px 30px;color:#fff;
+    box-shadow:0 22px 50px rgba(1,42,96,.26);position:relative;overflow:hidden;
+  }
+  .pillars-card::before{
+    content:'';position:absolute;inset:0;pointer-events:none;
+    background:repeating-linear-gradient(90deg,transparent,transparent 46px,rgba(255,255,255,.04) 46px,rgba(255,255,255,.04) 47px);
+  }
+  .pillar{display:flex;gap:16px;align-items:flex-start;padding:22px 0;border-top:1px solid rgba(255,255,255,.12);position:relative;}
+  .pillar:first-child{border-top:none;}
+  .pillar-num{
+    font-family:var(--font-display);font-weight:800;font-size:15px;line-height:1;
+    width:34px;height:34px;flex-shrink:0;border-radius:9px;
+    background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.18);
+    color:var(--sky);display:flex;align-items:center;justify-content:center;
+  }
+  .pillar-body h3{font-family:var(--font-display);font-weight:700;font-size:16px;letter-spacing:-.01em;margin-bottom:4px;color:#fff;}
+  .pillar-body p{font-size:13.5px;line-height:1.55;color:#cfe0f5;margin:0;max-width:none;}
+
+  /* Faixa de stats reaproveitando o componente, sem a sobreposição do hero */
+  .about-stats{background:var(--white);}
+  .about-stats .container{padding-top:46px;padding-bottom:8px;}
+  .about-stats .stats-card{box-shadow:0 16px 44px rgba(15,29,53,.10),0 3px 12px rgba(15,29,53,.05);}
+  .about-stats-note{
+    text-align:center;margin-top:24px;font-size:14.5px;color:var(--gray-400);
+    display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
+  }
+  .about-stats-note svg{width:18px;height:18px;color:var(--primary);flex-shrink:0;}
+
+  /* ---- O que está em jogo (a venda x o risco) ---- */
+  .stakes{background:#eef2f9;}
+  .stakes .container{padding-top:84px;padding-bottom:84px;}
+  .stakes-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px;}
+  .stake-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:32px 30px;position:relative;overflow:hidden;
+    box-shadow:0 8px 24px rgba(1,42,96,.07);
+  }
+  .stake-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;}
+  .stake-card.is-sale::before{background:var(--primary);}
+  .stake-card.is-risk::before{background:var(--orange);}
+  .stake-label{
+    display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);
+    font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;
+  }
+  .stake-card.is-sale .stake-label{color:var(--primary);}
+  .stake-card.is-risk .stake-label{color:var(--orange-dark);}
+  .stake-label-icon{width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;}
+  .stake-card.is-sale .stake-label-icon{background:var(--primary-soft);color:var(--primary);}
+  .stake-card.is-risk .stake-label-icon{background:rgba(250,176,25,.16);color:var(--orange-dark);}
+  .stake-label-icon svg{width:18px;height:18px;}
+  .stake-card h3{font-family:var(--font-display);font-weight:700;font-size:20px;letter-spacing:-.01em;color:var(--navy-deep);margin-bottom:10px;}
+  .stake-card p{font-size:14.5px;line-height:1.65;color:var(--gray-700);margin:0;}
+  .stakes-note{
+    margin-top:30px;background:linear-gradient(135deg,#0163c2 0%, #013580 100%);
+    border-radius:var(--radius-lg);padding:26px 32px;color:#fff;text-align:center;
+    font-family:var(--font-display);font-weight:600;font-size:clamp(17px,2vw,21px);
+    line-height:1.4;letter-spacing:-.01em;box-shadow:0 16px 38px rgba(1,53,128,.22);
+  }
+  .stakes-note strong{color:var(--sky);font-weight:700;}
+
+  /* ---- Frentes críticas: Água & Gás ---- */
+  .spec{background:var(--white);}
+  .spec .container{padding-top:92px;padding-bottom:92px;}
+  .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:52px;}
+  .spec-card{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:34px 30px;box-shadow:0 6px 18px rgba(1,42,96,.07);
+    transition:transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .spec-card:hover{transform:translateY(-4px);border-color:rgba(1,122,226,.30);box-shadow:0 20px 44px rgba(15,29,53,.10);}
+  .spec-head{display:flex;align-items:center;gap:16px;margin-bottom:16px;}
+  .spec-icon{
+    width:60px;height:60px;flex-shrink:0;border-radius:14px;background:var(--primary-soft);
+    color:var(--primary);display:flex;align-items:center;justify-content:center;
+  }
+  .spec-icon svg{width:32px;height:32px;}
+  .spec-head h3{font-family:var(--font-display);font-weight:700;font-size:24px;letter-spacing:-.01em;color:var(--navy-deep);}
+  .spec-card > p{font-size:14.5px;line-height:1.6;color:var(--gray-700);margin-bottom:18px;}
+  .spec-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .spec-tag{
+    font-family:var(--font-body);font-size:12.5px;font-weight:600;letter-spacing:.01em;
+    color:var(--navy);background:var(--gray-50);border:1px solid var(--border);
+    padding:7px 13px;border-radius:var(--radius-pill);
+  }
+  .spec-quality{
+    margin-top:36px;display:flex;gap:24px;flex-wrap:wrap;justify-content:center;
+    padding-top:34px;border-top:1px solid var(--border);
+  }
+  .spec-quality-item{display:inline-flex;align-items:center;gap:11px;font-size:14.5px;font-weight:500;color:var(--gray-700);}
+  .spec-quality-item svg{width:24px;height:24px;color:var(--primary);flex-shrink:0;}
+
+  /* ---- Como funciona a parceria (ecossistema em 3 passos) ---- */
+  .flow{position:relative;background:#eef2f9;overflow:hidden;}
+  .flow::before{
+    content:'';position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:
+      repeating-linear-gradient(90deg,transparent,transparent 60px,rgba(1,42,96,.045) 60px,rgba(1,42,96,.045) 61px),
+      repeating-linear-gradient(0deg,transparent,transparent 60px,rgba(1,42,96,.045) 60px,rgba(1,42,96,.045) 61px);
+  }
+  .flow .container{position:relative;padding-top:92px;padding-bottom:92px;}
+  .flow-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:0;margin-top:56px;}
+  .flow-step{
+    background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+    padding:34px 28px;text-align:center;box-shadow:0 8px 22px rgba(1,42,96,.07);
+    display:flex;flex-direction:column;align-items:center;
+  }
+  .flow-step.is-primary{
+    background:linear-gradient(155deg,#0163c2 0%, #013580 70%, #012a60 100%);
+    border-color:transparent;box-shadow:0 22px 48px rgba(1,53,128,.30);transform:translateY(-10px);
+  }
+  .flow-num{
+    width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-weight:800;font-size:18px;margin-bottom:18px;
+    background:var(--primary-soft);color:var(--primary);
+  }
+  .flow-step.is-primary .flow-num{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.25);}
+  .flow-step h3{font-family:var(--font-display);font-weight:700;font-size:18px;letter-spacing:-.01em;color:var(--navy-deep);margin-bottom:4px;}
+  .flow-step .flow-role{font-size:12.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--primary);margin-bottom:14px;}
+  .flow-step p{font-size:14px;line-height:1.6;color:var(--gray-700);margin:0;}
+  .flow-step.is-primary h3{color:#fff;}
+  .flow-step.is-primary .flow-role{color:var(--sky);}
+  .flow-step.is-primary p{color:#cfe0f5;}
+  .flow-arrow{display:flex;align-items:center;justify-content:center;padding:0 14px;color:var(--primary);}
+  .flow-arrow svg{width:30px;height:30px;}
+
+  /* ---- O contraste de valor (tabela comparativa) ---- */
+  .compare{background:var(--white);}
+  .compare .container{padding-top:92px;padding-bottom:96px;}
+  .compare-table{margin-top:52px;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 14px 40px rgba(15,29,53,.08);}
+  .compare-row{display:grid;grid-template-columns:1fr 1.25fr 1.25fr;align-items:stretch;}
+  .compare-row + .compare-row{border-top:1px solid var(--border);}
+  .compare-cell{padding:20px 24px;display:flex;flex-direction:column;justify-content:center;}
+  .compare-tag{display:none;}
+  /* Cabeçalho */
+  .compare-row.is-head .compare-cell{padding-top:18px;padding-bottom:18px;}
+  .compare-row.is-head .c-attr{background:var(--gray-50);font-family:var(--font-display);font-weight:700;color:var(--navy-deep);font-size:14px;letter-spacing:.02em;}
+  .compare-row.is-head .c-market{background:var(--gray-100);font-family:var(--font-display);font-weight:700;color:var(--gray-700);font-size:14.5px;}
+  .compare-row.is-head .c-hs{background:var(--navy);color:#fff;font-family:var(--font-display);font-weight:700;font-size:14.5px;display:flex;flex-direction:row;align-items:center;gap:9px;}
+  .compare-row.is-head .c-hs svg{width:18px;height:18px;flex-shrink:0;color:var(--sky);}
+  /* Corpo */
+  .c-attr{font-family:var(--font-display);font-weight:600;color:var(--navy-deep);font-size:15px;letter-spacing:-.01em;background:#fbfcfe;}
+  .c-market{font-size:14.5px;line-height:1.55;color:var(--gray-700);border-left:1px solid var(--border);}
+  .c-hs{font-size:14.5px;line-height:1.5;color:var(--navy-deep);font-weight:600;background:#f1f6fd;border-left:2px solid var(--primary);}
+
+  @media (max-width:980px){
+    .about-grid{grid-template-columns:1fr;gap:38px;}
+    .pillars-card{padding:6px 26px;}
+    .flow-grid{grid-template-columns:1fr;gap:18px;}
+    .flow-step.is-primary{transform:none;}
+    .flow-arrow{transform:rotate(90deg);padding:4px 0;}
+  }
+  @media (max-width:760px){
+    .about-intro .container{padding-top:56px;}
+    .stakes-grid,.spec-grid{grid-template-columns:1fr;}
+    .spec .container,.stakes .container,.flow .container,.compare .container{padding-top:64px;padding-bottom:64px;}
+
+    /* Tabela vira cartões empilhados */
+    .compare-row.is-head{display:none;}
+    .compare-row{grid-template-columns:1fr;border-top:none;}
+    .compare-row + .compare-row{border-top:none;}
+    .compare-table{border:none;border-radius:0;box-shadow:none;overflow:visible;display:flex;flex-direction:column;gap:16px;}
+    .compare-row{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 6px 18px rgba(1,42,96,.06);}
+    .compare-cell{padding:16px 20px;}
+    .c-attr{background:var(--navy);color:#fff;font-size:16px;}
+    .c-market,.c-hs{border-left:none;}
+    .c-market{border-top:1px solid var(--border);}
+    .c-hs{border-top:1px solid var(--border);background:#f1f6fd;}
+    .compare-tag{
+      display:inline-block;font-family:var(--font-body);font-size:11px;font-weight:700;
+      letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;
+    }
+    .c-market .compare-tag{color:var(--gray-400);}
+    .c-hs .compare-tag{color:var(--primary);}
+  }
+  @media (max-width:480px){
+    .stake-card,.spec-card{padding:26px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================ HEADER ============================ -->
+<header class="header">
+  <div class="container header-inner">
+
+    <!-- Logo -->
+    <a href="index.html" class="logo" aria-label="Hidro-Sul — página inicial">
+      <svg class="logo-mark" viewBox="0 0 38 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="drop" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3d9bf2"/>
+            <stop offset="55%" stop-color="#017ae2"/>
+            <stop offset="100%" stop-color="#013580"/>
+          </linearGradient>
+        </defs>
+        <path d="M19 1.5C19 1.5 4.5 18.5 4.5 30a14.5 14.5 0 0 0 29 0C33.5 18.5 19 1.5 19 1.5Z" fill="url(#drop)"/>
+        <path d="M13.5 27c0 5 3.2 8.6 7.8 9.2-3.1.2-6.2-1-8.3-3.6-1.6-2-2.1-4.4-1.4-6.6.4-1.3 1.9-1.3 1.9 1Z" fill="#ffffff" opacity="0.30"/>
+      </svg>
+      <span class="logo-text">
+        <span class="logo-name">HIDRO-SUL</span>
+        <span class="logo-sub">Soluções Hidráulicas</span>
+      </span>
+    </a>
+
+    <!-- Navegação desktop -->
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="quem-somos.html" class="nav-link active">Quem Somos</a>
+
+      <div class="nav-item">
+        <a href="#servicos" class="nav-link has-dropdown" aria-haspopup="true">Serviços</a>
+        <div class="nav-dropdown" role="menu">
+          <a href="individualizacao-agua-gas.html" class="nav-dropdown-item" role="menuitem">
+            <span class="nav-dropdown-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5S6 9 6 13.5a6 6 0 0 0 12 0C18 9 12 2.5 12 2.5Z"/></svg>
+            </span>
+            <span class="nav-dropdown-text">
+              <span class="nav-dropdown-title">Individualização de Água e Gás</span>
+              <span class="nav-dropdown-desc">Instalação de medidores e adequação hidráulica</span>
+            </span>
+          </a>
+          <a href="instalacao-predial.html" class="nav-dropdown-item" role="menuitem">
+            <span class="nav-dropdown-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M9 8h.01M15 8h.01M9 12h.01M15 12h.01M9 16h.01M15 16h.01"/></svg>
+            </span>
+            <span class="nav-dropdown-text">
+              <span class="nav-dropdown-title">Instalação Predial</span>
+              <span class="nav-dropdown-desc">Hidráulica completa para empreendimentos</span>
+            </span>
+          </a>
+          <a href="reformas.html" class="nav-dropdown-item" role="menuitem">
+            <span class="nav-dropdown-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5 18.5 9.5M3 21l4-1 11-11-3-3L4 17l-1 4Z"/></svg>
+            </span>
+            <span class="nav-dropdown-text">
+              <span class="nav-dropdown-title">Reformas e Manutenção</span>
+              <span class="nav-dropdown-desc">Reparos, modernização e manutenção predial</span>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+
+    <!-- CTA + menu mobile -->
+    <div class="header-cta">
+      <!-- TODO: atualizar número/contato antes do go-live -->
+      <a href="https://wa.me/5511983428297" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.9c0 1.76.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.9C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-1.99 1.37-.53.05-1.03.24-3.47-.72-2.92-1.15-4.79-4.13-4.94-4.32-.14-.2-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.25.61.84 2.11.91 2.26.07.15.12.32.02.52-.1.2-.15.32-.29.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .96.29.15.49.22.56.34.07.12.07.69-.18 1.38Z"/></svg>
+        Solicitar Orçamento
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" id="menuToggle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navegação mobile -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Início</a>
+    <a href="quem-somos.html">Quem Somos</a>
+    <a href="individualizacao-agua-gas.html">Individualização de Água e Gás</a>
+    <a href="instalacao-predial.html">Instalação Predial</a>
+    <a href="reformas.html">Reformas e Manutenção</a>
+    <a href="contato.html">Contato</a>
+    <a href="https://wa.me/5511983428297" class="cta" target="_blank" rel="noopener">Solicitar Orçamento</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ BREADCRUMB ============================ -->
+<nav class="breadcrumb" aria-label="Trilha de navegação">
+  <div class="container">
+    <ol class="breadcrumb-list">
+      <li><a href="index.html">Início</a></li>
+      <li class="separator" aria-hidden="true">/</li>
+      <li class="current" aria-current="page">Quem Somos</li>
+    </ol>
+  </div>
+</nav>
+
+<!-- ============================ BANNER (modelo das subpáginas) ============================ -->
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner reveal">
+      <div class="page-hero-eyebrow">Quem Somos</div>
+      <h1>O braço técnico da sua engenharia de vendas</h1>
+      <p class="page-hero-lead">Há mais de 20 anos a Hidro-Sul executa a individualização de água e gás na Grande São Paulo — com equipe própria, seguro de obra e o acabamento que transforma uma boa venda em um cliente satisfeito.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ INTRO / MANIFESTO ============================ -->
+<section class="about-intro">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-copy reveal">
+        <span class="section-eyebrow">A nossa essência</span>
+        <h2>Especialistas que blindam<br>a sua reputação</h2>
+        <p>A Hidro-Sul nasceu com um foco que nunca mudou: <strong>individualização de água e gás, e nada além disso.</strong> Enquanto o mercado é dominado por empreiteiros generalistas que “fazem de tudo”, nós dedicamos mais de duas décadas a dominar uma única frente — e a fazê-la com precisão de engenharia.</p>
+        <p>Para a marca que vende o medidor, para a construtora e para o condomínio, a venda só termina quando o sistema funciona perfeitamente. É exatamente aí que entramos: somos o <strong>braço técnico</strong> que instala, testa e entrega, protegendo o nome de quem confia no nosso trabalho.</p>
+        <p>O melhor medidor do mercado não sobrevive a uma instalação amadora. Por isso, cada obra que executamos é tratada como a vitrine da sua marca na Grande São Paulo.</p>
+        <div class="about-statement">Somos o braço técnico que garante a qualidade das suas vendas.</div>
+      </div>
+
+      <aside class="pillars-card reveal">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <div class="pillar-body">
+            <h3>Zero retrabalho</h3>
+            <p>Instalações feitas com qualidade desde a primeira execução. Sem chamados técnicos depois.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <div class="pillar-body">
+            <h3>Foco no seu core business</h3>
+            <p>Você vende e cuida do relacionamento. Nós assumimos toda a execução em campo.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <div class="pillar-body">
+            <h3>Satisfação final garantida</h3>
+            <p>O sistema opera sem falhas e o cliente final fica satisfeito — a sua marca ganha prestígio.</p>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FAIXA DE STATS ============================ -->
+<section class="about-stats">
+  <div class="container">
+    <div class="stats-card reveal-stagger">
+      <div class="stat">
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+        </span>
+        <span class="stat-body">
+          <span class="stat-top">Há mais de</span>
+          <span class="stat-big">20 anos</span>
+          <span class="stat-bottom">exclusivos no setor</span>
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5S6 9 6 13.5a6 6 0 0 0 12 0C18 9 12 2.5 12 2.5Z"/></svg>
+        </span>
+        <span class="stat-body">
+          <span class="stat-top">Mais de</span>
+          <span class="stat-big">300 mil</span>
+          <span class="stat-bottom">medidores instalados</span>
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="8" width="8" height="13" rx="1"/><path d="M6 7h.01M6 11h.01M6 15h.01M16.5 12h.01M16.5 16h.01"/></svg>
+        </span>
+        <span class="stat-body">
+          <span class="stat-top">Cobertura em</span>
+          <span class="stat-big">Grande SP</span>
+          <span class="stat-bottom">com escala e padrão</span>
+        </span>
+      </div>
+      <div class="stat">
+        <span class="stat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19a5.5 5.5 0 0 1 11 0"/><circle cx="8.5" cy="8" r="3.2"/><path d="M15 13.7a4.7 4.7 0 0 1 5 4.8"/><circle cx="16.5" cy="9" r="2.4"/></svg>
+        </span>
+        <span class="stat-body">
+          <span class="stat-top">100%</span>
+          <span class="stat-big">Equipe própria</span>
+          <span class="stat-bottom">treinada e segurada</span>
+        </span>
+      </div>
+    </div>
+    <p class="about-stats-note reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 5 5.6v5.1c0 4.4 2.9 7.5 7 8.9 4.1-1.4 7-4.5 7-8.9V5.6L12 2.8Z"/><path d="M9 11.4l2 2 4-4"/></svg>
+      Não somos aventureiros testando processos na sua obra. Temos história e comprometimento.
+    </p>
+  </div>
+</section>
+
+<!-- ============================ O QUE ESTÁ EM JOGO ============================ -->
+<section class="stakes">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-eyebrow both">O que está em jogo</span>
+      <h2 class="section-title">Uma venda premium exige<br>uma execução à altura</h2>
+    </div>
+
+    <div class="stakes-grid reveal-stagger">
+      <article class="stake-card is-sale">
+        <span class="stake-label">
+          <span class="stake-label-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </span>
+          A venda
+        </span>
+        <h3>O produto é de ponta</h3>
+        <p>Sua equipe fecha um grande contrato. A tecnologia é premium, a marca é forte e a expectativa do cliente está nas alturas. Tudo começa do jeito certo.</p>
+      </article>
+
+      <article class="stake-card is-risk">
+        <span class="stake-label">
+          <span class="stake-label-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.7 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg>
+          </span>
+          O risco
+        </span>
+        <h3>A instalação amadora</h3>
+        <p>Empreiteiros não qualificados geram vazamentos, atrasos e retrabalhos. E quando algo dá errado, o cliente final culpa a <strong>sua marca</strong> pelo transtorno — não o instalador.</p>
+      </article>
+    </div>
+
+    <p class="stakes-note reveal">Para construtoras e condomínios, a venda só termina quando o sistema funciona <strong>perfeitamente</strong>.</p>
+  </div>
+</section>
+
+<!-- ============================ DIFERENCIAIS (faixa azul, mesmo componente do início) ============================ -->
+<section class="why-section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-eyebrow both" style="color:var(--sky)">Risco transferido, operação protegida</span>
+      <h2 class="section-title">Por que a sua obra fica<br>segura com a Hidro-Sul</h2>
+    </div>
+
+    <div class="why-grid reveal-stagger">
+      <div class="why-item">
+        <span class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19a5.5 5.5 0 0 1 11 0"/><circle cx="8.5" cy="8" r="3.2"/><path d="M15 13.7a4.7 4.7 0 0 1 5 4.8"/><circle cx="16.5" cy="9" r="2.4"/></svg>
+        </span>
+        <h3>Equipe própria,<br>nunca terceirizada</h3>
+        <p>Instaladores CLT, fardados, com EPIs rigorosos e treinamento contínuo. Zero mão de obra de risco na sua obra.</p>
+      </div>
+
+      <div class="why-item">
+        <span class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 5 5.6v5.1c0 4.4 2.9 7.5 7 8.9 4.1-1.4 7-4.5 7-8.9V5.6L12 2.8Z"/><path d="M9 11.4l2 2 4-4"/></svg>
+        </span>
+        <h3>Seguro de obra e<br>blindagem jurídica</h3>
+        <p>Seguro de responsabilidade civil ativo, com suporte e proteção em eventuais ocorrências.</p>
+      </div>
+
+      <div class="why-item">
+        <span class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M10 8.8l1.4 1.4 2.6-2.6"/><path d="M8.6 13.2 7 21l5-2.7L17 21l-1.6-7.8"/></svg>
+        </span>
+        <h3>100% especialistas<br>em individualização</h3>
+        <p>Foco exclusivo em água e gás há mais de 20 anos. Não somos generalistas que fazem de tudo.</p>
+      </div>
+
+      <div class="why-item">
+        <span class="why-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.3 12 2.5 2.5 4.9-5.3"/></svg>
+        </span>
+        <h3>Instala, testa<br>e entrega</h3>
+        <p>Precisão projetada, testes rigorosos e limpeza pós-obra. Zero retrabalho, zero dor de cabeça.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ FRENTES CRÍTICAS: ÁGUA & GÁS ============================ -->
+<section class="spec">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-eyebrow both">Especialistas em frentes críticas</span>
+      <h2 class="section-title">Domínio técnico em<br>água e gás</h2>
+      <p class="section-subtitle">Trabalhamos com os principais materiais do mercado, escolhendo a solução certa para cada projeto — da prumada ao ponto de medição.</p>
+    </div>
+
+    <div class="spec-grid reveal-stagger">
+      <article class="spec-card">
+        <div class="spec-head">
+          <span class="spec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5S6 9 6 13.5a6 6 0 0 0 12 0C18 9 12 2.5 12 2.5Z"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5"/></svg>
+          </span>
+          <h3>Água</h3>
+        </div>
+        <p>Tubulação de água fria e quente com geometria de montagem precisa, espaçamento exato e componentes perfeitamente vedados.</p>
+        <div class="spec-tags">
+          <span class="spec-tag">PPR</span>
+          <span class="spec-tag">PEX</span>
+          <span class="spec-tag">PVC</span>
+          <span class="spec-tag">Aquatherm</span>
+          <span class="spec-tag">Cobre</span>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="spec-head">
+          <span class="spec-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5Z"/></svg>
+          </span>
+          <h3>Gás</h3>
+        </div>
+        <p>Instalações de gás com conexões flexíveis de raio de curvatura perfeito e testes rigorosos de estanqueidade antes da entrega.</p>
+        <div class="spec-tags">
+          <span class="spec-tag">Cobre</span>
+          <span class="spec-tag">PPR</span>
+          <span class="spec-tag">Multicamadas</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="spec-quality reveal">
+      <span class="spec-quality-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.3 12 2.5 2.5 4.9-5.3"/></svg>
+        Medidores na posição correta para leitura e manutenção
+      </span>
+      <span class="spec-quality-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.3 12 2.5 2.5 4.9-5.3"/></svg>
+        Shafts limpos e adaptação organizada em espaços confinados
+      </span>
+      <span class="spec-quality-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8.3 12 2.5 2.5 4.9-5.3"/></svg>
+        Padronização de componentes, sem excesso de fitas ou adesivos
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ COMO FUNCIONA A PARCERIA ============================ -->
+<section class="flow">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-eyebrow both">O ecossistema da parceria</span>
+      <h2 class="section-title">Como funciona, na prática</h2>
+    </div>
+
+    <div class="flow-grid reveal">
+      <div class="flow-step">
+        <span class="flow-num">1</span>
+        <span class="flow-role">Sua marca</span>
+        <h3>Você vende</h3>
+        <p>Foco em relacionamento, tecnologia e fechamento de contratos em condomínios e construtoras.</p>
+      </div>
+
+      <div class="flow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+
+      <div class="flow-step is-primary">
+        <span class="flow-num">2</span>
+        <span class="flow-role">A força Hidro-Sul</span>
+        <h3>Nós instalamos</h3>
+        <p>Entramos em cena com equipe própria, seguro e técnica impecável para executar a obra de ponta a ponta.</p>
+      </div>
+
+      <div class="flow-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+
+      <div class="flow-step">
+        <span class="flow-num">3</span>
+        <span class="flow-role">Sucesso mútuo</span>
+        <h3>O cliente celebra</h3>
+        <p>Sistema operando sem falhas. O cliente fica satisfeito, a sua marca ganha prestígio e abre caminho para novas indicações.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ O CONTRASTE DE VALOR ============================ -->
+<section class="compare">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-eyebrow both">O contraste de valor</span>
+      <h2 class="section-title">Padrão de mercado<br>vs. padrão Hidro-Sul</h2>
+    </div>
+
+    <div class="compare-table reveal">
+      <div class="compare-row is-head">
+        <div class="compare-cell c-attr">Atributo</div>
+        <div class="compare-cell c-market">Padrão de Mercado</div>
+        <div class="compare-cell c-hs">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5S6 9 6 13.5a6 6 0 0 0 12 0C18 9 12 2.5 12 2.5Z"/></svg>
+          Padrão Hidro-Sul
+        </div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell c-attr">Mão de obra</div>
+        <div class="compare-cell c-market"><span class="compare-tag">Mercado</span>Terceirizada, com rotatividade alta.</div>
+        <div class="compare-cell c-hs"><span class="compare-tag">Hidro-Sul</span>Equipe própria, padronizada e treinada.</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell c-attr">Segurança</div>
+        <div class="compare-cell c-market"><span class="compare-tag">Mercado</span>Risco assumido pelo vendedor ou condomínio.</div>
+        <div class="compare-cell c-hs"><span class="compare-tag">Hidro-Sul</span>Seguro de obra ativo e blindagem jurídica.</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell c-attr">Foco</div>
+        <div class="compare-cell c-market"><span class="compare-tag">Mercado</span>Empreiteiros generalistas que fazem de tudo.</div>
+        <div class="compare-cell c-hs"><span class="compare-tag">Hidro-Sul</span>Especialistas 100% em individualização.</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell c-attr">Qualidade visual</div>
+        <div class="compare-cell c-market"><span class="compare-tag">Mercado</span>Tubulações tortas e restos de obra.</div>
+        <div class="compare-cell c-hs"><span class="compare-tag">Hidro-Sul</span>Precisão projetada e limpeza pós-obra.</div>
+      </div>
+
+      <div class="compare-row">
+        <div class="compare-cell c-attr">Impacto no parceiro</div>
+        <div class="compare-cell c-market"><span class="compare-tag">Mercado</span>Chamados técnicos e desgaste da marca.</div>
+        <div class="compare-cell c-hs"><span class="compare-tag">Hidro-Sul</span>Instala, testa e entrega. Zero dor de cabeça.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PARCEIROS / PROVA SOCIAL ============================ -->
+<section class="partners-section">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-eyebrow both">Parcerias estratégicas</span>
+      <h2 class="section-title">Confiamos nas melhores marcas. Elas confiam na nossa instalação.</h2>
+      <p class="section-subtitle">Atuamos com as principais empresas do mercado de medição, garantindo que suas tecnologias performem com 100% de eficiência em campo.</p>
+    </div>
+
+    <div class="partners-marquee reveal">
+      <div class="partners-track">
+        <!-- conjunto 1 -->
+        <div class="partner-card">Techem<br>do Brasil</div>
+        <div class="partner-card">LAAGER Tecnologias Sustentáveis</div>
+        <div class="partner-card">Grupo MJ Individualização</div>
+        <div class="partner-card">Aquamed</div>
+        <div class="partner-card">Animacasa</div>
+        <div class="partner-card">Think Engenharia</div>
+        <div class="partner-card">Tallento Engenharia</div>
+        <div class="partner-card">Balm Engenharia</div>
+        <!-- conjunto 2 (cópia para o loop contínuo) -->
+        <div class="partner-card" aria-hidden="true">Techem<br>do Brasil</div>
+        <div class="partner-card" aria-hidden="true">LAAGER Tecnologias Sustentáveis</div>
+        <div class="partner-card" aria-hidden="true">Grupo MJ Individualização</div>
+        <div class="partner-card" aria-hidden="true">Aquamed</div>
+        <div class="partner-card" aria-hidden="true">Animacasa</div>
+        <div class="partner-card" aria-hidden="true">Think Engenharia</div>
+        <div class="partner-card" aria-hidden="true">Tallento Engenharia</div>
+        <div class="partner-card" aria-hidden="true">Balm Engenharia</div>
+      </div>
+    </div>
+
+    <div class="trust-row reveal">
+      <span class="trust-item">
+        <span class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 5 5.6v5.1c0 4.4 2.9 7.5 7 8.9 4.1-1.4 7-4.5 7-8.9V5.6L12 2.8Z"/><path d="M9 11.4l2 2 4-4"/></svg>
+        </span>
+        Mais de 20 anos no setor
+      </span>
+
+      <span class="trust-item">
+        <span class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19a5.5 5.5 0 0 1 11 0"/><circle cx="8.5" cy="8" r="3.2"/><path d="M15 13.7a4.7 4.7 0 0 1 5 4.8"/><circle cx="16.5" cy="9" r="2.4"/></svg>
+        </span>
+        Equipe própria CLT e segurada
+      </span>
+
+      <span class="trust-item">
+        <span class="trust-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M10 8.8l1.4 1.4 2.6-2.6"/><path d="M8.6 13.2 7 21l5-2.7L17 21l-1.6-7.8"/></svg>
+        </span>
+        100% especialistas em individualização
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA ORÇAMENTO ============================ -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner reveal">
+      <span class="cta-banner-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>
+      </span>
+      <p class="cta-banner-text">Vamos blindar a sua próxima obra juntos. Elimine retrabalhos e eleve o padrão das suas entregas na Grande São Paulo.</p>
+      <!-- TODO: atualizar número do WhatsApp antes do go-live -->
+      <a href="https://wa.me/5511983428297" class="btn-white" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.9c0 1.76.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.9C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-1.99 1.37-.53.05-1.03.24-3.47-.72-2.92-1.15-4.79-4.13-4.94-4.32-.14-.2-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.25.61.84 2.11.91 2.26.07.15.12.32.02.52-.1.2-.15.32-.29.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .96.29.15.49.22.56.34.07.12.07.69-.18 1.38Z"/></svg>
+        Solicitar Orçamento pelo WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid reveal-stagger">
+
+      <!-- Marca -->
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Hidro-Sul">
+          <svg class="logo-mark" viewBox="0 0 38 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="dropF" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3d9bf2"/>
+                <stop offset="55%" stop-color="#017ae2"/>
+                <stop offset="100%" stop-color="#013580"/>
+              </linearGradient>
+            </defs>
+            <path d="M19 1.5C19 1.5 4.5 18.5 4.5 30a14.5 14.5 0 0 0 29 0C33.5 18.5 19 1.5 19 1.5Z" fill="url(#dropF)"/>
+            <path d="M13.5 27c0 5 3.2 8.6 7.8 9.2-3.1.2-6.2-1-8.3-3.6-1.6-2-2.1-4.4-1.4-6.6.4-1.3 1.9-1.3 1.9 1Z" fill="#ffffff" opacity="0.30"/>
+          </svg>
+          <span class="logo-text">
+            <span class="logo-name">HIDRO-SUL</span>
+            <span class="logo-sub">Soluções Hidráulicas</span>
+          </span>
+        </a>
+        <p class="footer-tagline">A base sólida para a sua tecnologia. O braço técnico em individualização de água e gás na Grande São Paulo.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <!-- TODO: atualizar número do WhatsApp -->
+          <a href="https://wa.me/5511983428297" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.9c0 1.76.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.9C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-1.99 1.37-.53.05-1.03.24-3.47-.72-2.92-1.15-4.79-4.13-4.94-4.32-.14-.2-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.25.61.84 2.11.91 2.26.07.15.12.32.02.52-.1.2-.15.32-.29.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .96.29.15.49.22.56.34.07.12.07.69-.18 1.38Z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Serviços -->
+      <div>
+        <h3 class="footer-title">Serviços</h3>
+        <ul class="footer-list">
+          <li><a href="individualizacao-agua-gas.html">Individualização de Água e Gás</a></li>
+          <li><a href="instalacao-predial.html">Instalação Predial</a></li>
+          <li><a href="reformas.html">Reformas e Manutenção</a></li>
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div>
+        <h3 class="footer-title">Empresa</h3>
+        <ul class="footer-list">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="quem-somos.html">Quem Somos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div>
+        <h3 class="footer-title">Contato</h3>
+        <ul class="footer-list">
+          <!-- TODO: atualizar telefone/e-mail/WhatsApp -->
+          <li><a href="tel:+5511983428297"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>(11) 98342-8297</a></li>
+          <li><a href="mailto:contato@hidro-sul.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>contato@hidro-sul.com</a></li>
+          <li><a href="contato.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Grande São Paulo · SP</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copyright">
+        © 2026 Hidro-Sul Soluções Hidráulicas. Todos os direitos reservados.<br>
+        <span class="footer-legal"><a href="politica-de-privacidade.html">Política de Privacidade</a> · <a href="politica-de-cookies.html">Política de Cookies</a> · <a href="termos-de-uso.html">Termos de Uso</a></span>
+      </div>
+      <div class="footer-signature">
+        <span class="footer-signature-label">Desenvolvido por</span>
+        <div class="footer-signature-pills">
+          <a href="https://chibodev.com" target="_blank" rel="noopener noreferrer" aria-label="Chibo Dev — site oficial">
+            <span class="chibo-mark" aria-hidden="true">C<span>.</span></span>
+            <span class="chibo-name">Chibo Dev</span>
+          </a>
+          <span class="footer-signature-divider" aria-hidden="true"></span>
+          <a href="https://instagram.com/chibodev" target="_blank" rel="noopener noreferrer" class="is-ig is-ig-color" aria-label="Instagram @chibodev">
+            <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <defs>
+                <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#FEDA75"/>
+                  <stop offset="25%" stop-color="#FA7E1E"/>
+                  <stop offset="50%" stop-color="#D62976"/>
+                  <stop offset="75%" stop-color="#962FBF"/>
+                  <stop offset="100%" stop-color="#4F5BD5"/>
+                </linearGradient>
+              </defs>
+              <rect x="3" y="3" width="18" height="18" rx="5" stroke="url(#ig-grad)"/>
+              <circle cx="12" cy="12" r="3.5" stroke="url(#ig-grad)"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="url(#ig-grad)" stroke="none"/>
+            </svg>
+            @chibodev
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ WHATSAPP FLUTUANTE ============================ -->
+<!-- TODO: atualizar número antes do go-live -->
+<a href="https://wa.me/5511983428297" class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.9c0 1.76.46 3.45 1.32 4.95L2 22l5.3-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.9C21.96 6.45 17.5 2 12.04 2Zm5.8 14.16c-.25.69-1.45 1.32-1.99 1.37-.53.05-1.03.24-3.47-.72-2.92-1.15-4.79-4.13-4.94-4.32-.14-.2-1.18-1.57-1.18-2.99 0-1.42.74-2.12 1.01-2.41.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.25.61.84 2.11.91 2.26.07.15.12.32.02.52-.1.2-.15.32-.29.49-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.29.15.46.12.63-.07.17-.2.73-.85.92-1.14.2-.29.39-.24.66-.15.27.1 1.71.81 2 .96.29.15.49.22.56.34.07.12.07.69-.18 1.38Z"/></svg>
+</a>
+
+<!-- ============================ SCRIPTS ============================ -->
+<script>
+  // Menu mobile
+  (function(){
+    var t = document.getElementById('menuToggle');
+    var m = document.getElementById('mobileNav');
+    if(t && m){
+      t.addEventListener('click', function(){
+        var open = m.classList.toggle('open');
+        t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    }
+    // Dropdown por toque (mobile/tablet): abre no clique
+    document.querySelectorAll('.nav-item').forEach(function(item){
+      var link = item.querySelector('.has-dropdown');
+      if(!link) return;
+      link.addEventListener('click', function(e){
+        if(window.matchMedia('(hover: none)').matches){
+          e.preventDefault();
+          var isOpen = item.getAttribute('data-open') === 'true';
+          item.setAttribute('data-open', isOpen ? 'false' : 'true');
+        }
+      });
+    });
+    // Esconde o WhatsApp flutuante ao chegar no footer (não passa por cima dele)
+    var wa = document.getElementById('waFloat');
+    var footer = document.querySelector('.footer');
+    if(wa && footer && 'IntersectionObserver' in window){
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ wa.classList.toggle('is-hidden', e.isIntersecting); });
+      }, {rootMargin:'0px 0px -8% 0px'});
+      obs.observe(footer);
+    }
+
+    // Animações de entrada no scroll
+    var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+    if('IntersectionObserver' in window){
+      var ro = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target); }
+        });
+      }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+      revealEls.forEach(function(el){ ro.observe(el); });
+    } else {
+      revealEls.forEach(function(el){ el.classList.add('in'); });
+    }
+  })();
+</script>
+
+<!-- Banner de cookies (LGPD) — injeta o próprio CSS e markup -->
+<script src="cookie-consent.js" defer></script>
+
+</body>
+</html>
