@@ -140,8 +140,7 @@ a{color:inherit;}
   position:sticky;
   top:0;
   z-index:100;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
+  background:#fff;
   border-bottom:1px solid var(--border);
 }
 .header-inner{
@@ -490,6 +489,10 @@ a{color:inherit;}
 }
 .section-head.center .section-subtitle{margin-left:auto;margin-right:auto;}
 
+/* na seção de parceiros, título e subtítulo acompanham a largura do carrossel */
+.partners-section .section-title,
+.partners-section .section-subtitle{max-width:none;}
+
 /* ============================ CARDS DE PERFIL ============================ */
 .profiles-grid{
   display:grid;
@@ -670,18 +673,19 @@ a{color:inherit;}
   margin-top:52px;
 }
 .trust-item{
+  flex:1 1 0;min-width:0;
   display:flex;align-items:center;justify-content:center;gap:11px;
-  padding:8px 30px;
+  padding:10px 30px;
   font-size:15px;font-weight:500;color:var(--gray-700);
   text-align:center;
 }
 .trust-item:not(:first-child){border-left:1px solid var(--orange);}
-.trust-icon{color:var(--primary);display:inline-flex;}
+.trust-icon{color:var(--primary);display:inline-flex;flex-shrink:0;}
 .trust-icon svg{width:28px;height:28px;}
 
 @media (max-width:1200px){
-  .trust-row{flex-direction:column;gap:20px 0;}
-  .trust-item{padding:0;}
+  .trust-row{flex-direction:column;align-items:flex-start;gap:20px 0;}
+  .trust-item{flex:0 0 auto;padding:0;justify-content:flex-start;text-align:left;}
   .trust-item:not(:first-child){border-left:none;}
 }
 
@@ -1110,4 +1114,86 @@ a.ci-value:hover{color:var(--primary);}
 @media (max-width:560px){
   .form-row{grid-template-columns:1fr;gap:0;}
   .contact-form-card{padding:26px 20px;}
+}
+
+
+/* ============================ PÁGINA QUEM SOMOS ============================ */
+/* Usa os tokens do site. Reaproveita page-hero, stats-card, why-section, cta-banner. */
+/* ---- Origem + selo ---- */
+.about-origin{background:#fff;}
+.about-origin .container{padding-top:84px;padding-bottom:84px;}
+.about-origin-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:60px;align-items:center;}
+.about-origin h2{
+  font-family:var(--font-display);font-weight:700;
+  font-size:clamp(28px,3.2vw,40px);line-height:1.12;letter-spacing:-.025em;
+  color:var(--navy-deep);margin:14px 0 22px;
+}
+.about-origin p{font-size:16.5px;line-height:1.75;color:var(--gray-700);margin-bottom:16px;max-width:560px;}
+.about-origin p strong{color:var(--navy);font-weight:600;}
+.about-seal{display:flex;justify-content:center;align-items:center;position:relative;}
+.about-seal::before{
+  content:'';position:absolute;width:80%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle, rgba(1,122,226,.16), rgba(1,122,226,0) 70%);
+}
+.about-seal img{
+  position:relative;width:min(360px,82%);height:auto;
+  filter:drop-shadow(0 16px 34px rgba(1,42,96,.22));
+}
+
+/* ---- Linha do tempo ---- */
+.tl-band{background:#e9f0fb;} /* mesmo fundo da CTA, para não criar emenda entre as seções */
+.timeline{
+  --rail:14px;            /* eixo central compartilhado por linha e bolinhas */
+  --pad:36px;             /* recuo do conteúdo */
+  max-width:760px;margin:50px auto 0;position:relative;padding-left:var(--pad);
+}
+/* linha principal — centrada no eixo via translateX (imune ao box-sizing) */
+.timeline::before{content:'';position:absolute;left:var(--rail);transform:translateX(-50%);
+  top:6px;bottom:0;width:2px;
+  background:linear-gradient(180deg,var(--primary),rgba(1,122,226,.18));}
+/* continuação que esmaece, indicando que a história segue */
+.timeline::after{content:'';position:absolute;left:var(--rail);transform:translateX(-50%);
+  top:100%;width:2px;height:54px;
+  background:linear-gradient(180deg,rgba(1,122,226,.45),rgba(1,122,226,0));}
+/* luz que desce suavemente pela continuação, em loop */
+.tl-flow{position:absolute;left:var(--rail);top:100%;width:7px;height:7px;border-radius:50%;
+  background:var(--primary);box-shadow:0 0 10px 2px rgba(1,122,226,.45);
+  opacity:0;animation:tl-flow 2.6s ease-in-out infinite;}
+@keyframes tl-flow{
+  0%{transform:translate(-50%,0);opacity:0;}
+  18%{opacity:1;}
+  70%{opacity:.65;}
+  100%{transform:translate(-50%,46px);opacity:0;}
+}
+@media (prefers-reduced-motion:reduce){.tl-flow{animation:none;opacity:0;}}
+.tl-item{position:relative;padding-bottom:40px;}
+.tl-item:last-child{padding-bottom:0;}
+/* bolinha — centrada no MESMO eixo da linha, independente da borda */
+.tl-item::before{
+  content:'';position:absolute;left:calc(var(--rail) - var(--pad));transform:translateX(-50%);
+  top:3px;width:18px;height:18px;border-radius:50%;
+  background:#fff;border:3px solid var(--primary);box-shadow:0 0 0 4px var(--primary-soft);
+}
+.tl-item.is-now::before{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 4px rgba(250,176,25,.22);}
+.tl-year{font-family:var(--font-display);font-weight:800;font-size:14px;letter-spacing:.04em;
+  color:var(--primary);text-transform:uppercase;}
+.tl-item.is-now .tl-year{color:var(--orange-dark);}
+.tl-title{font-family:var(--font-display);font-weight:700;font-size:19px;color:var(--navy-deep);
+  margin:2px 0 6px;letter-spacing:-.01em;}
+.tl-text{font-size:15.5px;line-height:1.65;color:var(--gray-700);max-width:600px;}
+
+/* ---- Faixa de stats: título acima ---- */
+.about-scale .container{padding-top:84px;padding-bottom:84px;}
+.about-scale .stats-card{margin-top:40px;}
+
+/* CTA com padding vertical simétrico só nesta página (o global usa topo menor) */
+.cta-section.cta-balanced{padding-top:92px;}
+
+/* texto justificado nos blocos de leitura */
+.about-origin p,
+.tl-text{ text-align:justify; }
+
+@media (max-width:860px){
+  .about-origin-grid{grid-template-columns:1fr;gap:40px;}
+  .about-seal{order:-1;}
 }
