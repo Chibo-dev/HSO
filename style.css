@@ -136,12 +136,32 @@ a{color:inherit;}
 .btn-sm{padding:10px 18px;font-size:14px;}
 
 /* ============================ HEADER ============================ */
+/* ============================ TRANSIÇÃO ENTRE PÁGINAS ============================ */
+/* Cross-fade nativo (View Transitions API) entre páginas do mesmo domínio.
+   Progressive enhancement: navegadores sem suporte apenas navegam, sem animação,
+   e nada quebra (URL, voltar, SEO seguem normais). Header e botão de WhatsApp
+   recebem view-transition-name para permanecerem estáveis enquanto o conteúdo faz o fade. */
+@view-transition { navigation: auto; }
+
+/* cross-fade suave do conteúdo */
+::view-transition-old(root),
+::view-transition-new(root){
+  animation-duration:.32s;
+  animation-timing-function:cubic-bezier(.4, 0, .2, 1);
+}
+
+/* respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce){
+  @view-transition { navigation: none; }
+}
+
 .header{
   position:sticky;
   top:0;
   z-index:100;
   background:#fff;
   border-bottom:1px solid var(--border);
+  view-transition-name:site-header;
 }
 .header-inner{
   display:flex;
@@ -441,6 +461,7 @@ a{color:inherit;}
   position:fixed;
   right:22px;bottom:22px;
   z-index:200;
+  view-transition-name:wa-float;
   width:58px;height:58px;
   border-radius:50%;
   background:var(--whatsapp);
