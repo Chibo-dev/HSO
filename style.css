@@ -1657,3 +1657,19 @@ a.ci-value:hover{color:var(--primary);}
   .mp-phase{display:grid;grid-template-columns:40px 1fr;gap:16px;text-align:left;align-items:start;padding:0;}
   .mp-phase-dot{margin:0;}
 }
+
+/* ===== Variante 3 colunas — Antes · Depois · Finalizado (reformas-hidraulicas) ===== */
+.ba-grid--trio{
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:auto;
+  height:auto;
+  align-self:center;
+}
+.ba-grid--trio .ba-item{height:auto;aspect-ratio:3/4;}
+@media (max-width:640px){
+  .ba-grid--trio{grid-template-columns:1fr;}
+  .ba-grid--trio .ba-item{aspect-ratio:4/3;}
+}
+
+/* ===== Imagem única na seção antes/depois (manutencao-predial) ===== */
+.ba-grid--solo{grid-template-columns:1fr;}
