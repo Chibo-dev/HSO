@@ -358,7 +358,8 @@ a{color:inherit;}
 /* foto dos medidores */
 .hero-bg{
   position:absolute;inset:0;
-  background-image:url('assets/hero-medidores.jpg');
+  /* DESKTOP: imagem paisagem (assets/hero-desktop.png) */
+  background-image:url('assets/hero-desktop.png');
   background-size:cover;
   background-position:right center;
   z-index:1;
@@ -958,6 +959,11 @@ a{color:inherit;}
       linear-gradient(180deg,rgba(14,28,52,.82) 0%,rgba(14,28,52,.88) 100%),
       linear-gradient(0deg, rgba(14,28,52,.6) 0%, transparent 50%);
   }
+  .hero-bg{
+    /* MOBILE: imagem retrato (assets/hero-mobile.png) */
+    background-image:url('assets/hero-mobile.png');
+    background-position:center top;
+  }
   .stats-card-wrap{margin-top:-88px;}
   .stats-card{grid-template-columns:repeat(2,1fr);gap:8px 0;padding:26px 8px;}
   .stat{padding:14px 18px;}
@@ -1002,6 +1008,35 @@ html{scroll-padding-top:90px;}
 .page-hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(32px,5vw,46px);
   line-height:1.08;letter-spacing:-.02em;margin-bottom:18px;}
 .page-hero-lead{font-size:17px;line-height:1.6;color:#cfe0f5;max-width:640px;}
+
+/* ---- Banner com foto de fundo (Quem Somos, Empresas Parceiras, ...) ---- */
+.page-hero--image{isolation:isolate;}
+.page-hero--image::before{display:none;} /* a foto entra no lugar do glow radial */
+.page-hero-bg{
+  position:absolute;inset:0;z-index:1;
+  /* Imagem por página: defina --hero-img no <section ... style="--hero-img:url('assets/...')">.
+     O fallback abaixo é usado pela Quem Somos, que não define a variável. Trocar a extensão se não for .png. */
+  background-image:var(--hero-img, url('assets/banner-quem-somos-desktop.png'));
+  background-size:cover;
+  background-position:var(--hero-pos, center);
+}
+.page-hero-overlay{
+  position:absolute;inset:0;z-index:2;
+  background:
+    linear-gradient(90deg,
+      rgba(14,28,52,.94) 0%,
+      rgba(14,28,52,.82) 34%,
+      rgba(14,28,52,.44) 64%,
+      rgba(14,28,52,.18) 100%),
+    linear-gradient(0deg, rgba(14,28,52,.42) 0%, transparent 42%);
+}
+.page-hero--image > .container{position:relative;z-index:3;padding-top:82px;padding-bottom:82px;}
+@media (max-width:768px){
+  .page-hero--image .page-hero-overlay{
+    background:linear-gradient(180deg, rgba(14,28,52,.80) 0%, rgba(14,28,52,.90) 100%);
+  }
+  .page-hero--image > .container{padding-top:60px;padding-bottom:60px;}
+}
 .legal-hero-meta{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-size:13px;color:#9fb9da;}
 .legal-hero-meta svg{flex-shrink:0;}
 
